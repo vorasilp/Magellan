@@ -6,17 +6,19 @@ Please register with [aismagellan](https://www.aismagellan.io)  for see more det
 
 Note The library is using Software Serial for communication with NB-IoT BC95 Shield board.
 
-### supported board and hardware competible
+### supported board and hardware compatible
   
   	Arduino UNO please use software serial on pin8=RX pin9=TX and pin4=RST
   	Arduino MEGA please use software serial on pin48=RX pin46=TX and pin4=RST 
-  	NUCLEO_L476RG please use Hardware serial on pin2=RX pin8=TX and pin4=RST
+	Arduino M0 please use Hardware serial on pin0=RX pin1=TX and pin4=RST
+  	NUCLEO64 tested with NUCLEO_L476RG NUCLEO_F401RE NUCLEO_F411RE please use Hardware serial on pin2=RX pin8=TX and pin4=RST
   
 | Boards        | Pin RX | Pin TX  | Pin RESET |
 | ------------- |:------:| -------:| ---------:|
 | Arduino UNO   |    8   |    9    |	  4    |
 | Arduino MEGA  |   48   |   46    | 	  4    |
-| NUCLEO_L476RG |    2   |    8    |      4    |
+| Arduino M0    |    0   |    1    |      4    |
+| NUCLEO64      |    2   |    8    |      4    |
 
 ### Installing Prerequisite Library
 	- Altsoftserial

@@ -12,9 +12,11 @@
 
 #if defined( __ARDUINO_X86__)
     #define ATLSOFTSERIAL 0
-#elif defined(ARDUINO_NUCLEO_L476RG)
+#elif defined(ARDUINO_NUCLEO_L476RG) || defined(ARDUINO_NUCLEO_F411RE) || defined(ARDUINO_NUCLEO_F401RE)
     #define ATLSOFTSERIAL 0
-#elif defined(ARDUINO_AVR_UNO) || (ARDUINO_AVR_MEGA2560)
+#elif defined(ARDUINO_SAM_ZERO)
+    #define ATLSOFTSERIAL 0	
+#elif defined(ARDUINO_AVR_UNO) || defined(ARDUINO_AVR_MEGA2560)
 	#define ATLSOFTSERIAL 1
 #else 
     #define ATLSOFTSERIAL 1
@@ -172,6 +174,7 @@ private:
 
 protected:
 	 Stream *_Serial;
+	 Stream *_DebugSerial;
 };
 
 extern Magellan nbiot;
