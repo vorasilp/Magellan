@@ -53,6 +53,8 @@ Magellan nbiot;
     #define Serial_PORT Serial1
 #elif defined(ARDUINO_SAM_ZERO)
     #define Serial_PORT Serial5
+#elif defined(ESP32)
+    #define Serial_PORT Serial2
 #elif defined(ARDUINO_AVR_UNO) || defined(ARDUINO_AVR_MEGA2560)
     AltSoftSerial moduleserial;
 #else 
@@ -97,6 +99,10 @@ bool Magellan::begin(char *auth)
       _Serial = &moduleserial;
       _DebugSerial = &Serial;
       _DebugSerial->println(F("PLEASE USE PIN RX=48 & TX=46"));
+  #elif defined(ESP32)
+      Serial2.begin(9600);
+      _Serial = &Serial2;
+      _DebugSerial = &Serial;
   #else 
       moduleserial.begin(9600);
       _Serial = &moduleserial;

@@ -14,7 +14,7 @@
     #define ATLSOFTSERIAL 0
 #elif defined(ARDUINO_NUCLEO_L476RG) || defined(ARDUINO_NUCLEO_F411RE) || defined(ARDUINO_NUCLEO_F401RE)
     #define ATLSOFTSERIAL 0
-#elif defined(ARDUINO_SAM_ZERO)
+#elif defined(ARDUINO_SAM_ZERO) || defined(ESP32)
     #define ATLSOFTSERIAL 0	
 #elif defined(ARDUINO_AVR_UNO) || defined(ARDUINO_AVR_MEGA2560)
 	#define ATLSOFTSERIAL 1
